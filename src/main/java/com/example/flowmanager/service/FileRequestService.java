@@ -22,8 +22,7 @@ public class FileRequestService {
     }
 
     public void markSuccess(UUID id, String outputPath) {
-        fileRequestRepository.findById(id).ifPresent(fileRequestEntity ->
-        {
+        fileRequestRepository.findById(id).ifPresent(fileRequestEntity -> {
             fileRequestEntity.setFileType(FileType.PDF);
             fileRequestEntity.setOutputPath(outputPath);
             fileRequestEntity.setUpdatedAt(LocalDateTime.now());
@@ -33,8 +32,7 @@ public class FileRequestService {
     }
 
     public void markFailed(UUID id) {
-        fileRequestRepository.findById(id).ifPresent(fileRequestEntity ->
-        {
+        fileRequestRepository.findById(id).ifPresent(fileRequestEntity -> {
             fileRequestEntity.setUpdatedAt(LocalDateTime.now());
             fileRequestEntity.setConversionStatus(ConversionStatus.ERROR);
             fileRequestRepository.save(fileRequestEntity);

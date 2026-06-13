@@ -36,7 +36,7 @@ public class FlowManagerController {
     }
 
     @GetMapping("/files/{id}/status")
-    public ConversionStatus returnStatus(@PathVariable UUID id) {
-        return flowManagerService.returnStatus(id);
+    public ConversionStatus getStatus(@PathVariable UUID id) {
+        return flowManagerService.getStatus(id);
     }
 }

@@ -45,7 +45,7 @@ public class FlowManagerService {
         return new DownloadFileResponse(inputStream, fileRequestEntity.getOutputPath(), fileRequestEntity.getFileType());
     }
 
-    public ConversionStatus returnStatus(UUID id) {
+    public ConversionStatus getStatus(UUID id) {
         FileRequestEntity fileRequestEntity = fileRequestRepository.findById(id).orElseThrow();
         return fileRequestEntity.getConversionStatus();
     }

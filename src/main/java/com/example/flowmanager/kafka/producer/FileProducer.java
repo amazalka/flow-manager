@@ -13,8 +13,10 @@ import java.util.concurrent.CompletableFuture;
 @RequiredArgsConstructor
 public class FileProducer {
     private final KafkaTemplate<String, InputEvent> kafkaTemplate;
+
     @Value("${flow-manager.kafka.topics.input}")
     private String topic;
+
     public CompletableFuture<SendResult<String, InputEvent>> send(InputEvent inputEvent) {
         return kafkaTemplate.send(topic, inputEvent);
     }

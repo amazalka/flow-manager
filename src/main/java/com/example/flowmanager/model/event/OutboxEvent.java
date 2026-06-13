@@ -17,12 +17,16 @@ public class OutboxEvent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "event_id")
     private Long eventId;
+
     @Column(name = "event_type")
     private EventType eventType;
+
     @Column(name = "payload")
     private String payload;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
     @Column(name = "sent_at")
     private LocalDateTime sentAt;
 }
