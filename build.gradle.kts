@@ -28,6 +28,7 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
     implementation("io.minio:minio:8.5.7")
     implementation("org.liquibase:liquibase-core")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.postgresql:postgresql:42.7.3")
     implementation("net.javacrumbs.shedlock:shedlock-spring:5.13.0")
     implementation("net.javacrumbs.shedlock:shedlock-provider-jdbc-template:5.13.0")
