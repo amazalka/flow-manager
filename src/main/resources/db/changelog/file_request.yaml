@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-file-request-table
+      author: azaliya
+      changes:
+        - createTable:
+            tableName: file-request
+            columns:
+              - column:
+                  name: file_id
+                  type: UUID
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: file_type
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: input_path
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: output_path
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+
+              - column:
+                  name: status
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
