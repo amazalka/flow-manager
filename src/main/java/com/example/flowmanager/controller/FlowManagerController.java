@@ -22,8 +22,8 @@ public class FlowManagerController {
     private final FlowManagerService flowManagerService;
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public UploadFileResponse upload(@RequestParam("file") MultipartFile file) {
-        return flowManagerService.upload(file);
+    public UploadFileResponse upload(@RequestHeader("X-User-Login") String login , @RequestParam("file") MultipartFile file) {
+        return flowManagerService.upload(login, file);
     }
 
     @GetMapping("/files/{id}")
